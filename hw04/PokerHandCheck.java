@@ -895,24 +895,30 @@ public class PokerHandCheck {
             printCardOne==printCardFive&&printCardTwo==printCardThree || printCardOne==printCardFive&&printCardTwo==printCardFour || printCardOne==printCardFive&&printCardThree==printCardFour ||
             printCardTwo==printCardThree&&printCardFour==printCardFive || printCardTwo==printCardFour&&printCardThree==printCardFive || printCardTwo==printCardFive&&printCardThree==printCardFour){
                 System.out.println("You have a two pair!");
+            //tells the user if there are two pairs in the hand (based on all possible combinations)
             }    
         else if (printCardOne==printCardTwo || printCardOne==printCardThree || printCardOne==printCardFour || printCardOne==printCardFive ||
             printCardTwo==printCardThree || printCardTwo==printCardFour || printCardTwo==printCardFive || 
             printCardThree==printCardFour || printCardThree==printCardFive ||
             printCardFour==printCardFive){
+                //all possible combinations for single pair
                 if (printCardOne==printCardTwo&&printCardOne==printCardThree || printCardOne==printCardTwo&&printCardOne==printCardFour ||
             printCardOne==printCardTwo&&printCardOne==printCardFive || printCardOne==printCardThree&&printCardOne==printCardFour || printCardOne==printCardThree&&printCardOne==printCardFive ||
             printCardOne==printCardFour&&printCardOne==printCardFive || printCardTwo==printCardThree&&printCardTwo==printCardFour || printCardTwo==printCardThree&&printCardTwo==printCardFive ||
             printCardTwo==printCardFour&&printCardTwo==printCardFive || printCardThree==printCardFour&&printCardThree==printCardFive){
+                //all possible three of a kind combinations (must pass if statement for a pair first)
                 System.out.println("You have three of a kind!");
+            //tells the user that there is a three of a kind in the hand (if there is not a two pair)   
             }
                 else {System.out.println("You have a pair!");
+                //tells the user there is a pair (if there is not a three of a kind)
                 }
                
                 
         }
         else {
             System.out.println("You have a high card hand!");
+        //tells the user there is a high card hand if there is not a pair, two pair, or three of a kind
         }    
        
             
