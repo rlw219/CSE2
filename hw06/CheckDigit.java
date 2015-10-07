@@ -149,15 +149,15 @@ public class CheckDigit {
         
         
         
-        int one = (int) oneChar;
-        int two = (int) twoChar;
-        int three = (int) threeChar;
-        int four = (int) fourChar;
-        int five = (int) fiveChar;
-        int six = (int) sixChar;
-        int seven = (int) sevenChar;
-        int eight = (int) eightChar;
-        int nine = (int) nineChar;
+        int one = Character.getNumericValue(oneChar);
+        int two = Character.getNumericValue(twoChar);
+        int three = Character.getNumericValue(threeChar);
+        int four = Character.getNumericValue(fourChar);
+        int five = Character.getNumericValue(fiveChar);
+        int six = Character.getNumericValue(sixChar);
+        int seven = Character.getNumericValue(sevenChar);
+        int eight = Character.getNumericValue(eightChar);
+        int nine = Character.getNumericValue(nineChar);
         
         
         int check;
@@ -166,21 +166,20 @@ public class CheckDigit {
             check=10;
         }
         else{
-            check = (int) checkChar;
+            check = Character.getNumericValue(checkChar);
         }
         
         int sum = (10*one + 9*two + 8*three + 7*four + 6*five + 5*six + 4*seven + 3*eight + 2*nine);
         int checkReal = (sum % 11);
-        char checkFinal;
         if(checkReal==10){
-            checkFinal = 'X';
-        }
-        else{
-            checkFinal = (char) checkReal;
+            if (sum%11 != check) {
+                System.out.println("This is NOT a valid ISBN. Check digit should be: X");    
+            }
         }
         
+        
         if (sum % 11 != check){
-            System.out.println("This is NOT a valid ISBN. Check digit should be: " + checkFinal);
+            System.out.println("This is NOT a valid ISBN. Check digit should be: " + checkReal);
         }
         else{
             System.out.println("This is a valid ISBN.");
