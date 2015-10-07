@@ -13,7 +13,7 @@ import java.util.Scanner; //imports Scanner
 public class Timer {
     //main method required for all java programs
     public static void main(String[] args)  {
-        Scanner myScanner=new Scanner (System.in);  //defines Scanner
+        Scanner myScanner=new Scanner (System.in);  //defines Scanner4
         
         System.out.print("Enter the current time in the form HHMM in military time: "); //tells user to input current time in the form (hour hour minute minute) in military time
         double currentTime=myScanner.nextDouble();  //defines variable currentTime
